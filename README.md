@@ -2,7 +2,6 @@
 
 Projet de data science appliqué au football africain : prédire le résultat des matchs avec un **Random Forest**, puis simuler **1 000 fois** la CAN 2025 (Monte Carlo) pour estimer la probabilité de victoire de chaque sélection.
 
-
 ---
 
 ## 🎯 Objectif
@@ -32,6 +31,8 @@ Fusion de **5 sources** en une base de **8 297 matchs** (2010 – 2024) :
 | Classement FIFA | Rang des sélections |
 | Statistiques d'équipes | Statistiques agrégées par sélection |
 | Champions | Palmarès de la CAN |
+
+> Les fichiers CSV ne sont pas inclus dans ce dépôt.
 
 ## 🔧 Features (20 variables)
 
@@ -67,6 +68,8 @@ Le surapprentissage a été éliminé : l'écart train/test est quasi nul, contr
 
 Le tournoi est simulé 1 000 fois à partir du **tableau officiel des 1/8 de finale** (16 équipes qualifiées), avec prédiction ML de chaque match, génération de scores et gestion des tirs au but.
 
+> Il s'agit d'une **simulation à partir du tableau des huitièmes de finale**, et non d'une prévision réalisée avant le début du tournoi.
+
 ### Top 5 des probabilités de titre
 
 | Rang | Équipe | Probabilité de titre |
@@ -87,20 +90,18 @@ Le tournoi est simulé 1 000 fois à partir du **tableau officiel des 1/8 de fin
 ## 🚀 Lancer le projet
 
 ```bash
-git clone https://github.com/Hasnae112/NOM_DU_REPO.git
-cd NOM_DU_REPO
+git clone https://github.com/Hasnae112/afcon-winner-prediction-ml.git
+cd afcon-winner-prediction-ml
 pip install pandas numpy scikit-learn matplotlib seaborn
 jupyter notebook CAN_2025_FINAL_Restructure.ipynb
 ```
 
-> Le notebook a été développé sous Google Colab : adapte les chemins `/content/...` à ton dossier local, et place les fichiers CSV dans un dossier `data/`.
+Le notebook a été développé sous Google Colab : les chemins `/content/...` sont à adapter à votre environnement, et les fichiers CSV sont à fournir séparément.
 
 ## 🗂️ Structure
 
 ```
-├── CAN_2025_FINAL_Restructure.ipynb   # Notebook principal
-├── data/                              # Jeux de données (CSV)
-├── models/                            # Modèle et transformers sauvegardés (.pkl)
+├── CAN_2025_FINAL_Restructure.ipynb   # Notebook principal (pipeline complet)
 └── README.md
 ```
 
